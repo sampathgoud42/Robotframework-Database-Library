@@ -324,7 +324,7 @@ class Query(object):
             spParams = []
         cur = None
         try:
-            cur = self._dbconnection.cursor(as_dict=False)
+            cur = self._dbconnection.cursor()
             spName = spName.encode('ascii', 'ignore')
             logger.info('Executing : Call Stored Procedure  |  %s  |  %s ' % (spName, spParams))
             cur.callproc(spName, spParams)
